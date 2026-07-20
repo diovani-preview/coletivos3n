@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020617" />
+  <meta
+    name="description"
+    content="Jogo da memória sobre substantivos coletivos de animais, organizado em três níveis."
+  />
+
+  <title>Jogo da Memória — Coletivos de Animais</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="particulas" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <main class="container">
+
+    <!-- ==================================================
+         TELA INICIAL — ESCOLHA DO NÍVEL
+    =================================================== -->
+    <section
+      class="tela tela-inicial ativa"
+      id="telaInicial"
+      aria-labelledby="tituloInicial"
+    >
+      <div class="caixa-inicial">
+
+        <p class="rotulo-superior">TRÊS DESAFIOS DE MEMÓRIA</p>
+
+        <h1 id="tituloInicial">Jogo da Memória</h1>
+        <h2>Coletivos de Animais</h2>
+
+        <p class="texto-inicial">
+          Escolha um nível e encontre os dez pares formados por cada animal
+          e seu respectivo substantivo coletivo.
+        </p>
+
+        <div class="grade-niveis" aria-label="Escolha um nível do jogo">
+
+          <button
+            class="cartao-nivel nivel-1"
+            type="button"
+            data-nivel="1"
+            aria-label="Iniciar Nível 1"
+          >
+            <span class="numero-nivel">01</span>
+
+            <span class="miniatura-nivel" aria-hidden="true">
+              <img
+                id="previewNivel1"
+                src="img01.jpg"
+                alt=""
+                draggable="false"
+              />
+            </span>
+
+            <strong>NÍVEL 1</strong>
+
+            <span class="descricao-nivel">
+              Todas as cartas são ilustradas.
+            </span>
+
+            <span class="acao-nivel">ENTRAR NO NÍVEL</span>
+          </button>
+
+          <button
+            class="cartao-nivel nivel-2"
+            type="button"
+            data-nivel="2"
+            aria-label="Iniciar Nível 2"
+          >
+            <span class="numero-nivel">02</span>
+
+            <span class="miniatura-nivel" aria-hidden="true">
+              <img
+                id="previewNivel2"
+                src="itxt01.jpg"
+                alt=""
+                draggable="false"
+              />
+            </span>
+
+            <strong>NÍVEL 2</strong>
+
+            <span class="descricao-nivel">
+              Cartas ilustradas e os coletivos em texto.
+            </span>
+
+            <span class="acao-nivel">ENTRAR NO NÍVEL</span>
+          </button>
+
+          <button
+            class="cartao-nivel nivel-3"
+            type="button"
+            data-nivel="3"
+            aria-label="Iniciar Nível 3"
+          >
+            <span class="numero-nivel">03</span>
+
+            <span class="miniatura-nivel" aria-hidden="true">
+              <img
+                id="previewNivel3"
+                src="capa.jpg"
+                alt=""
+                draggable="false"
+              />
+            </span>
+
+            <strong>NÍVEL 3</strong>
+
+            <span class="descricao-nivel">
+              Todas as cartas com texto.
+            </span>
+
+            <span class="acao-nivel">ENTRAR NO NÍVEL</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         TELA DO JOGO
+    =================================================== -->
+    <section
+      class="tela tela-jogo"
+      id="telaJogo"
+      aria-labelledby="tituloJogo"
+    >
+      <section class="intro">
+        <p class="rotulo-superior" id="nivelAtual">NÍVEL 1</p>
+
+        <h1 id="tituloJogo">Jogo da Memória</h1>
+        <h2>Coletivos de Animais</h2>
+
+        <p>
+          Relacione cada animal ao seu coletivo correspondente.
+        </p>
+
+        <div class="painel">
+          <div class="info">
+            Tentativas: <span id="tentativas">0</span>
+          </div>
+
+          <div class="info">
+            Pares: <span id="paresEncontrados">0</span>/10
+          </div>
+
+          <button id="reiniciar" type="button">Reiniciar jogo</button>
+          <button id="voltar" type="button">Escolher nível</button>
+        </div>
+
+        <div
+          id="mensagem"
+          class="mensagem"
+          role="status"
+          aria-live="polite"
+        ></div>
+      </section>
+
+      <section
+        class="tabuleiro"
+        id="tabuleiro"
+        aria-label="Tabuleiro do jogo da memória"
+      ></section>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
